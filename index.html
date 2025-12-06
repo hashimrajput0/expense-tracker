@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;700&family=Montserrat:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Tracker</title>
+</head>
+
+<body>
+    <header>
+        <h1>Smart Expense Tracker</h1>
+        <div class="input-section">
+            <div class="input">
+
+
+                <div class="amount-box">
+                    <input class="amount" placeholder="Amount" type="text">
+                    <div class="PKR">PKR</div>
+                </div>
+
+
+                <select class="category">
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Education">Education</option>
+                    <option value="Medical">Medical</option>
+
+                </select>
+            </div>
+            <button class="add-btn">Add Expense</button>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+
+
+
+
+            <div class="card">
+                <p class="amount-card">2253 PKR</p>
+                <p class="category-card">Food</p>
+                <p class="date-card">21/Dec/2025</p>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="bar-chart">
+            <h2>Charts</h2>
+            <canvas id="expenseChart"></canvas>
+            <select id="chartType">
+                <option value="doughnut">Doughnut Chart</option>
+                <option value="bar">Bar Chart</option>
+
+            </select>
+        </div>
+
+    </main>
+    <footer>
+        <div class="foot-container">
+            <div class="totals"></div>
+            <button class="resetbtn">Reset</button>
+        </div>
+    </footer>
+
+
+
+    <dialog class="sure">
+        <div class="small-container">
+            <p>Are You Sure</p>
+            <div class="buttons">
+
+                <button class="yes">Yes!! Reset</button>
+                <button class="no">No</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
