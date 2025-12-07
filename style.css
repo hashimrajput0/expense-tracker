@@ -216,3 +216,13 @@ dialog {
   border: 1px solid #0a67d1;
   cursor: pointer;
 }
+.btns {
+  display: flex;
+  gap: 10px;
+}
+.deletebutton {
+  text-align: right;
+}
+.deletebutton:hover {
+  cursor: pointer;
+}

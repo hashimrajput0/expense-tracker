@@ -35,7 +35,11 @@
 
                 </select>
             </div>
+            <div class="btns">
+            <button onclick="exportToExcel()">Export to Excel</button>
+
             <button class="add-btn">Add Expense</button>
+            </div>
         </div>
     </header>
     <main>
@@ -45,6 +49,7 @@
 
 
             <div class="card">
+   
                 <p class="amount-card">2253 PKR</p>
                 <p class="category-card">Food</p>
                 <p class="date-card">21/Dec/2025</p>
@@ -95,7 +100,7 @@
             </div>
         </div>
     </dialog>
-
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="main.js"></script>
 </body>

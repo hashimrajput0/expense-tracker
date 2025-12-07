@@ -68,7 +68,7 @@ function AddLocalStorage() {
 function GetLocalStorage() {
     cardContainer.innerHTML = "";
     let expense = JSON.parse(localStorage.getItem("expense")) || [];
-    expense.forEach(singleExpense => {
+    expense.forEach((singleExpense, id) => {
         let card = document.createElement("div");
         card.classList.add("card");
         let amountText = document.createElement("p");
@@ -77,6 +77,23 @@ function GetLocalStorage() {
         categoryText.classList.add("category-card");
         let dateText = document.createElement("p");
         dateText.classList.add("date-card");
+
+
+        let deleteButton = document.createElement("p");
+        deleteButton.innerText = "❌";
+        deleteButton.classList.add("deletebutton");
+        card.prepend(deleteButton);
+
+        deleteButton.addEventListener("click", () => {
+            expense.splice(id, 1);
+            localStorage.setItem("expense", JSON.stringify(expense));
+            GetLocalStorage();
+            loadChart();
+            categories();
+            completeTotalExpense()
+        });
+
+
         amountText.innerText = `${singleExpense.amount} PKR`;
         categoryText.innerText = singleExpense.category;
         dateText.innerText = singleExpense.date;
@@ -191,4 +208,21 @@ function getTotalByCategory(categoryName) {
     let p = document.createElement("p");
     p.innerText = `${categoryName} = ${total}PKR  | `;
     footerTotals.appendChild(p);
+}
+
+
+// excel
+function exportToExcel() {
+    let expenses = JSON.parse(localStorage.getItem("expense")) || [];
+
+    if (expenses.length === 0) {
+        alert("No data to export!");
+        return;
+    }
+
+    let worksheet = XLSX.utils.json_to_sheet(expenses);
+    let workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Expenses");
+
+    XLSX.writeFile(workbook, "Expenses.xlsx");
 }
