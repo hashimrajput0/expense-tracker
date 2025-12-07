@@ -174,9 +174,8 @@ select {
   gap: 5px;
 }
 .totals p {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 
 /* dialog box */
 dialog {
@@ -225,4 +224,45 @@ dialog {
 }
 .deletebutton:hover {
   cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 450px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    width: 90%;
+  }
+  .bar-chart {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .totals {
+    font-size: 10px;
+  }
+.foot-container button {
+  margin-right: 15px;
+
+}
+.container {
+  justify-content: center;
+  align-items: center;
+
+
+
+}
+.container .card {
+  border-radius: 14px;
+  padding: 16px;
+  max-width: 30%;
+}
+
 }
